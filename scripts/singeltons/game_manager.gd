@@ -19,7 +19,10 @@ func increase_score(points: int):
 
 func get_score() -> int:
 	return _score
-
+	
+func reset_score():
+	_score = 0
+	
 func get_high_score() -> int:
 	return _high_score
 

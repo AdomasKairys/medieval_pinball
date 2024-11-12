@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://bruh0wf0sho33"]
+[gd_scene load_steps=4 format=3 uid="uid://bruh0wf0sho33"]
 
-[ext_resource type="Script" path="res://scripts/pinball.gd" id="1_kcw57"]
 [ext_resource type="Texture2D" uid="uid://dxierx42mcg1d" path="res://cannon-ball.png" id="2_euse6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qwg4n"]
@@ -9,16 +8,12 @@ rough = true
 [sub_resource type="CircleShape2D" id="CircleShape2D_w8fko"]
 radius = 1.4
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qa807"]
-radius = 18.0
-
 [node name="Pinball" type="RigidBody2D" groups=["Player"]]
 position = Vector2(203, 67)
 collision_layer = 4
 collision_mask = 27
 physics_material_override = SubResource("PhysicsMaterial_qwg4n")
 can_sleep = false
-script = ExtResource("1_kcw57")
 
 [node name="PinballSprite" type="Sprite2D" parent="."]
 scale = Vector2(1.54959, 1.54959)
@@ -27,10 +22,3 @@ texture = ExtResource("2_euse6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(10, 10)
 shape = SubResource("CircleShape2D_w8fko")
-
-[node name="Area2D" type="Area2D" parent="." groups=["Player"]]
-collision_layer = 4
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Player"]]
-shape = SubResource("CircleShape2D_qa807")

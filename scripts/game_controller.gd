@@ -13,4 +13,5 @@ func _on_score_changed():
 	score_text.text = str(GameManager.get_score())
 
 func _on_game_over():
+	GameManager.reset_score()
 	get_tree().reload_current_scene()

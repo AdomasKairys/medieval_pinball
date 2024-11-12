@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://3d7hohme3sih"]
+[gd_scene load_steps=35 format=3 uid="uid://3d7hohme3sih"]
 
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_o1r26"]
 [ext_resource type="Texture2D" uid="uid://c8ciu2rc27x1j" path="res://background.png" id="2_60ke5"]
@@ -30,6 +30,10 @@ size = Vector2(90.0222, 3.98242)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c4dvw"]
 radius = 5.09131
 height = 91.3601
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xsh1h"]
+radius = 8.80002
+height = 147.633
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2xlc"]
 size = Vector2(191, 20)
@@ -155,34 +159,39 @@ position = Vector2(533, 726)
 rotation = -1.57237
 points = 40
 
-[node name="BouncePad" type="StaticBody2D" parent="Placeables"]
+[node name="BouncePads" type="StaticBody2D" parent="Placeables"]
 rotation = 0.686877
 collision_mask = 4
 physics_material_override = SubResource("PhysicsMaterial_6imrx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeables/BouncePad"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeables/BouncePads"]
 position = Vector2(834.033, 296.313)
 shape = SubResource("CapsuleShape2D_5qnr4")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Placeables/BouncePad"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Placeables/BouncePads"]
 position = Vector2(590.805, 485.438)
 rotation = -1.37454
 shape = SubResource("CapsuleShape2D_jgx0x")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Placeables/BouncePad"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Placeables/BouncePads"]
 position = Vector2(660.619, 9.16269)
 rotation = -0.67754
 shape = SubResource("CapsuleShape2D_ptymv")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Placeables/BouncePad"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Placeables/BouncePads"]
 position = Vector2(474.364, 182.602)
 rotation = -0.68091
 shape = SubResource("RectangleShape2D_mmdkq")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Placeables/BouncePad"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Placeables/BouncePads"]
 position = Vector2(519.286, 87.565)
 rotation = -0.829448
 shape = SubResource("CapsuleShape2D_c4dvw")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Placeables/BouncePads"]
+position = Vector2(401.799, 406.359)
+rotation = -0.685753
+shape = SubResource("CapsuleShape2D_xsh1h")
 
 [node name="MiddleGutter" type="Area2D" parent="Placeables"]
 position = Vector2(262, 966)
@@ -399,4 +408,4 @@ offset_right = 627.0
 offset_bottom = 132.0
 text = "High score: 0"
 
-[connection signal="area_entered" from="Placeables/MiddleGutter" to="Placeables/MiddleGutter" method="_on_area_entered"]
+[connection signal="body_entered" from="Placeables/MiddleGutter" to="Placeables/MiddleGutter" method="_on_body_entered"]
