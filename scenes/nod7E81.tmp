@@ -1,0 +1,334 @@
+[gd_scene load_steps=23 format=3 uid="uid://3d7hohme3sih"]
+
+[ext_resource type="Texture2D" uid="uid://c8ciu2rc27x1j" path="res://background.png" id="1_1uia3"]
+[ext_resource type="PackedScene" uid="uid://bfc82o6vllghb" path="res://prefabs/launcher.tscn" id="2_1bchj"]
+[ext_resource type="PackedScene" uid="uid://bruh0wf0sho33" path="res://prefabs/pinball.tscn" id="3_bci4v"]
+[ext_resource type="PackedScene" uid="uid://crs5qbt0h8ksl" path="res://prefabs/paddle.tscn" id="4_amtg2"]
+[ext_resource type="Script" path="res://scripts/curve_wall.gd" id="8_wl050"]
+[ext_resource type="PackedScene" uid="uid://bws3icemu6ns0" path="res://prefabs/obstacle.tscn" id="11_wv6eq"]
+
+[sub_resource type="Curve2D" id="Curve2D_t8r8r"]
+bake_interval = 50.0
+_data = {
+"points": PackedVector2Array(13.435, 89.4489, -13.435, -89.4489, 621, 89, 0, 0, 0, 0, 499, 1, 0, 0, 0, 0, 619, 3, 0, 0, 0, 0, 621, 89)
+}
+point_count = 4
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6d0ll"]
+bounce = 1.0
+absorbent = true
+
+[sub_resource type="Curve2D" id="Curve2D_kt0aa"]
+bake_interval = 50.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 546, 784, 38.8924, -18.0005, -38.8924, 18.0005, 482.545, 849.042, 3.79552, -4.21754, -3.79552, 4.21754, 403.645, 882.629, 0, 0, 0, 0, 392, 961, 0, 0, 0, 0, 544, 958, 0, 0, 0, 0, 546, 872, 0, 0, 0, 0, 546, 784)
+}
+point_count = 7
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_50nsd"]
+bounce = 1.0
+absorbent = true
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wri5k"]
+bounce = 1.0
+absorbent = true
+
+[sub_resource type="Curve2D" id="Curve2D_je13j"]
+bake_interval = 50.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 510, 688, 13.4695, -40.4086, -13.4695, 40.4086, 502, 761, 32.5442, 1.12969, -32.5442, -1.12969, 403, 837, 0, 0, 0, 0, 380, 813, -11.2246, 16.2757, 11.2246, -16.2757, 488, 678, 0, 0, 0, 0, 510, 688)
+}
+point_count = 6
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6imrx"]
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yukl"]
+size = Vector2(9.12476, 138.641)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v4blx"]
+bounce = 1.0
+absorbent = true
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7wxsf"]
+bounce = 0.3
+absorbent = true
+
+[sub_resource type="Curve2D" id="Curve2D_cpbyr"]
+bake_interval = 50.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 54, 958, 0, 0, 0, 0, 11, 960, 0, 0, 0, 0, 9, -39, 0, 0, 0, 0, 670, -41, 0, 0, 0, 0, 671, 958, 0, 0, 0, 0, 552, 958, -0.330896, 1.6864, 0.330896, -1.6864, 551, 201, 16.4814, 41.2034, -16.4814, -41.2034, 536.577, 109.103, 0, 0, 0, 0, 466, 60, -27.0883, -32.128, 27.0883, 32.128, 572.702, 77.2444, 0, 0, 0, 0, 593, 203, 0, 0, 0, 0, 596, 929, 0, 0, 0, 0, 634, 930, 0, 0, 0, 0, 635.828, 105.426, 16.0148, 22.386, -16.0148, -22.386, 632.784, 56.4796, 26.7541, 4.38458, -26.7541, -4.38458, 567.988, 4.22534, 0, 0, 0, 0, 505.004, -0.021452, 0, 0, 0, 0, 54, 0, 0, 0, 0, 0, 54, 958)
+}
+point_count = 19
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wsoyp"]
+radius = 22.2037
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g0nkq"]
+bounce = 0.3
+absorbent = true
+
+[sub_resource type="Curve2D" id="Curve2D_q701x"]
+bake_interval = 50.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 258, 46, 58, -32, -58, 32, 140, 84, 0, 0, 0, 0, 97, 173, 0, 0, 0, 0, 96, 276, -9.92893, 75.7071, 9.92893, -75.7071, 135, 234, 0, 0, 0, 0, 148, 154, -32.1005, 23.7868, 32.1005, -23.7868, 185, 94, 0, 0, 0, 0, 259, 46)
+}
+point_count = 8
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2bfxo"]
+bounce = 0.3
+absorbent = true
+
+[sub_resource type="Curve2D" id="Curve2D_10tcm"]
+bake_interval = 50.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 316, 65, 31.2376, -45.224, -31.2376, 45.224, 220, 129, 0, 0, 0, 0, 179, 273, 0, 0, 0, 0, 153, 450, -62.9949, 4.22293, 62.9949, -4.22293, 252, 321, 0, 0, 0, 0, 357, 445, 38.8913, 34.9228, -38.8913, -34.9228, 312, 287, 9.79989, 60.5811, -9.79989, -60.5811, 224, 226, -3.1748, 27.7795, 3.1748, -27.7795, 309, 103, 0, 0, 0, 0, 316, 65)
+}
+point_count = 10
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.581033, 0.581033, 0.581033, 1)
+position = Vector2(298, 479)
+scale = Vector2(5.64063, 5.08594)
+texture = ExtResource("1_1uia3")
+
+[node name="Pinball" parent="." instance=ExtResource("3_bci4v")]
+position = Vector2(609, 808)
+
+[node name="Paddles" type="Node2D" parent="."]
+position = Vector2(299, 911)
+
+[node name="PaddleRight" parent="Paddles" instance=ExtResource("4_amtg2")]
+position = Vector2(116, -19)
+rotation = 2.44346
+paddle_rotation_speed = 40.0
+rotation_max = 200.0
+rotation_min = 140.0
+
+[node name="PaddleLeft" parent="Paddles" instance=ExtResource("4_amtg2")]
+position = Vector2(-116, -20)
+is_left = true
+paddle_rotation_speed = 40.0
+rotation_max = 60.0
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Obstacle4" parent="Obstacles" instance=ExtResource("11_wv6eq")]
+position = Vector2(251, 421)
+scale = Vector2(0.397393, 0.372943)
+
+[node name="Obstacle3" parent="Obstacles" instance=ExtResource("11_wv6eq")]
+position = Vector2(332, 216)
+rotation = 2.96176
+scale = Vector2(0.5, 0.5)
+
+[node name="Obstacle2" parent="Obstacles" instance=ExtResource("11_wv6eq")]
+position = Vector2(398, 133)
+rotation = -0.496558
+scale = Vector2(0.5, 0.5)
+
+[node name="Obstacle" parent="Obstacles" instance=ExtResource("11_wv6eq")]
+position = Vector2(451, 233)
+rotation = 0.969256
+scale = Vector2(0.732023, 0.732023)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="LauchCurve" type="StaticBody2D" parent="Walls"]
+visible = false
+position = Vector2(10, 2)
+collision_mask = 4
+script = ExtResource("8_wl050")
+
+[node name="Path2D" type="Path2D" parent="Walls/LauchCurve"]
+position = Vector2(-1, -4)
+curve = SubResource("Curve2D_t8r8r")
+
+[node name="Line2D" type="Line2D" parent="Walls/LauchCurve"]
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/LauchCurve"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/LauchCurve"]
+
+[node name="SideRampsL" type="StaticBody2D" parent="Walls"]
+position = Vector2(596.365, 0)
+scale = Vector2(-1, 1)
+collision_mask = 4
+physics_material_override = SubResource("PhysicsMaterial_6d0ll")
+script = ExtResource("8_wl050")
+
+[node name="Path2D" type="Path2D" parent="Walls/SideRampsL"]
+curve = SubResource("Curve2D_kt0aa")
+
+[node name="Line2D" type="Line2D" parent="Walls/SideRampsL"]
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/SideRampsL"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/SideRampsL"]
+
+[node name="SideRampsR" type="StaticBody2D" parent="Walls"]
+collision_mask = 4
+physics_material_override = SubResource("PhysicsMaterial_50nsd")
+script = ExtResource("8_wl050")
+
+[node name="Path2D" type="Path2D" parent="Walls/SideRampsR"]
+curve = SubResource("Curve2D_kt0aa")
+
+[node name="Line2D" type="Line2D" parent="Walls/SideRampsR"]
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/SideRampsR"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/SideRampsR"]
+
+[node name="SideGutterR" type="Node2D" parent="Walls"]
+
+[node name="SideGutter" type="StaticBody2D" parent="Walls/SideGutterR"]
+position = Vector2(120, 196)
+scale = Vector2(0.762312, 0.753234)
+collision_mask = 4
+physics_material_override = SubResource("PhysicsMaterial_wri5k")
+script = ExtResource("8_wl050")
+
+[node name="Path2D" type="Path2D" parent="Walls/SideGutterR/SideGutter"]
+scale = Vector2(1.011, 1)
+curve = SubResource("Curve2D_je13j")
+
+[node name="Line2D" type="Line2D" parent="Walls/SideGutterR/SideGutter"]
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/SideGutterR/SideGutter"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/SideGutterR/SideGutter"]
+
+[node name="BouncePad" type="StaticBody2D" parent="Walls/SideGutterR"]
+position = Vector2(148, 756)
+rotation = -0.68766
+collision_mask = 4
+physics_material_override = SubResource("PhysicsMaterial_6imrx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SideGutterR/BouncePad"]
+position = Vector2(5.43762, -2.92487)
+shape = SubResource("RectangleShape2D_5yukl")
+
+[node name="SideGutterL" type="Node2D" parent="Walls"]
+
+[node name="SideGutter" type="StaticBody2D" parent="Walls/SideGutterL"]
+position = Vector2(486, 188)
+rotation = 3.14159
+scale = Vector2(0.772605, -0.751977)
+collision_mask = 4
+physics_material_override = SubResource("PhysicsMaterial_v4blx")
+script = ExtResource("8_wl050")
+
+[node name="Path2D" type="Path2D" parent="Walls/SideGutterL/SideGutter"]
+curve = SubResource("Curve2D_je13j")
+
+[node name="Line2D" type="Line2D" parent="Walls/SideGutterL/SideGutter"]
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/SideGutterL/SideGutter"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/SideGutterL/SideGutter"]
+
+[node name="BouncePad" type="StaticBody2D" parent="Walls/SideGutterL"]
+position = Vector2(449, 756)
+rotation = 0.686877
+collision_mask = 4
+physics_material_override = SubResource("PhysicsMaterial_6imrx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SideGutterL/BouncePad"]
+position = Vector2(5.43762, -2.92487)
+shape = SubResource("RectangleShape2D_5yukl")
+
+[node name="MainWalls" type="StaticBody2D" parent="Walls"]
+collision_mask = 4
+physics_material_override = SubResource("PhysicsMaterial_7wxsf")
+script = ExtResource("8_wl050")
+
+[node name="Path2D" type="Path2D" parent="Walls/MainWalls"]
+position = Vector2(-6, -4)
+rotation = -0.0039179
+curve = SubResource("Curve2D_cpbyr")
+
+[node name="Line2D" type="Line2D" parent="Walls/MainWalls"]
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/MainWalls"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/MainWalls"]
+
+[node name="OneWayBlock" type="StaticBody2D" parent="Walls"]
+collision_mask = 4
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls/OneWayBlock"]
+position = Vector2(168, 841)
+rotation = 1.94861
+shape = SubResource("CircleShape2D_wsoyp")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/OneWayBlock"]
+position = Vector2(444, 846)
+rotation = -1.87629
+shape = SubResource("CircleShape2D_wsoyp")
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls/OneWayBlock"]
+position = Vector2(154, 265)
+rotation = 3.39143
+shape = SubResource("CircleShape2D_wsoyp")
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls/OneWayBlock"]
+position = Vector2(235, 25)
+rotation = -4.86581
+shape = SubResource("CircleShape2D_wsoyp")
+one_way_collision = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/OneWayBlock"]
+position = Vector2(477, 27)
+rotation = -1.73067
+shape = SubResource("CircleShape2D_wsoyp")
+one_way_collision = true
+
+[node name="TopGutter" type="StaticBody2D" parent="Walls"]
+physics_material_override = SubResource("PhysicsMaterial_g0nkq")
+script = ExtResource("8_wl050")
+
+[node name="Path2D" type="Path2D" parent="Walls/TopGutter"]
+curve = SubResource("Curve2D_q701x")
+
+[node name="Line2D" type="Line2D" parent="Walls/TopGutter"]
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/TopGutter"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/TopGutter"]
+
+[node name="Scoop" type="StaticBody2D" parent="Walls"]
+physics_material_override = SubResource("PhysicsMaterial_2bfxo")
+script = ExtResource("8_wl050")
+
+[node name="Path2D" type="Path2D" parent="Walls/Scoop"]
+curve = SubResource("Curve2D_10tcm")
+
+[node name="Line2D" type="Line2D" parent="Walls/Scoop"]
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/Scoop"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Scoop"]
+
+[node name="Launcher" parent="." instance=ExtResource("2_1bchj")]
+position = Vector2(610, 899)
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 18.0
+offset_right = 289.0
+offset_bottom = 88.0
+theme_override_font_sizes/normal_font_size = 51
+text = "0"
+fit_content = true

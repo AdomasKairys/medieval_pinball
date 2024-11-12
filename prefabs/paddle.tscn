@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://crs5qbt0h8ksl"]
+
+[ext_resource type="Script" path="res://scripts/paddle.gd" id="1_1hd07"]
+[ext_resource type="Texture2D" uid="uid://bbqhj7kd412k4" path="res://sword.png" id="2_26mo8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fs3e6"]
+rough = true
+bounce = 0.9
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyk37"]
+size = Vector2(31.1244, 107.906)
+
+[node name="Paddle" type="AnimatableBody2D"]
+collision_layer = 2
+collision_mask = 4
+physics_material_override = SubResource("PhysicsMaterial_fs3e6")
+script = ExtResource("1_1hd07")
+paddle_rotation_speed = 20.0
+rotation_max = 70.0
+
+[node name="PaddleSprite" type="Sprite2D" parent="."]
+position = Vector2(48.029, 19.029)
+rotation = -1.22173
+scale = Vector2(3.5, -3.5)
+texture = ExtResource("2_26mo8")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(48.029, 19.029)
+rotation = -1.22173
+shape = SubResource("RectangleShape2D_vyk37")
