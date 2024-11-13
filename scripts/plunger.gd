@@ -1,7 +1,6 @@
 extends AnimatableBody2D
 
 @export var squash_scale := 0.05
-
 @export var launch_speed := 10000.0
 @export var prime_speed := 20.0
 @export var prime_distance := 25

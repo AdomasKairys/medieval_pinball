@@ -1,7 +1,6 @@
 extends StaticBody2D
 
 @export var hit_count := 3
-@export var destruction_delay := 1.0
 @export var hit_score:= 10
 @export var break_score := 50
 @export var bounce_impulse := 100.0
@@ -24,7 +23,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if _current_hit_count > hit_count and not _is_destroyed: 
 		_is_destroyed = true
 		GameManager.increase_score(break_score)
-		#await get_tree().create_timer(destruction_delay).timeout
 		call_deferred("_disable_node")
 		return
 	GameManager.increase_score(hit_score)
