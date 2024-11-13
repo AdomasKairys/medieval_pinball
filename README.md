@@ -5,4 +5,4 @@
 Down arrow to launch the ball Left arrow for left flipper Right arrow for right flipper Escape to quit the game
 
 # Documentation
-[Wiki]([https://github.com/AdomasKairys/medieval_pinball/wiki/Game-Description](https://github.com/AdomasKairys/medieval_pinball/wiki)) page in repository
+[Wiki](https://github.com/AdomasKairys/medieval_pinball/wiki) page in repository
