@@ -8,7 +8,7 @@ bounce = 1.0
 absorbent = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aw2yq"]
-size = Vector2(80, 20)
+size = Vector2(80, 87)
 
 [node name="plunger" type="Node2D"]
 position = Vector2(610, 898)
@@ -19,7 +19,8 @@ collision_layer = 16
 collision_mask = 4
 physics_material_override = SubResource("PhysicsMaterial_5nsyb")
 script = ExtResource("1_5dgyp")
-launch_speed = 1000.0
+squash_scale = 1.0
+launch_speed = 75.0
 prime_speed = 5.0
 
 [node name="PlungerSprite" type="Sprite2D" parent="PlungerAb"]
@@ -28,4 +29,5 @@ scale = Vector2(3.34375, 3.34375)
 texture = ExtResource("2_32csh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlungerAb"]
+position = Vector2(0, 33.5)
 shape = SubResource("RectangleShape2D_aw2yq")

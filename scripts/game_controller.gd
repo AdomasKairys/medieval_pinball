@@ -18,3 +18,7 @@ func _on_game_over():
 
 func _reload_scene():
 	get_tree().reload_current_scene()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit()
