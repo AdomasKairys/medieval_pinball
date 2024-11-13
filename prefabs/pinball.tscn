@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bruh0wf0sho33"]
 
-[ext_resource type="Texture2D" uid="uid://dxierx42mcg1d" path="res://cannon_ball.png" id="2_euse6"]
+[ext_resource type="Texture2D" uid="uid://dxierx42mcg1d" path="res://sprites/cannon_ball.png" id="2_euse6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qwg4n"]
 rough = true

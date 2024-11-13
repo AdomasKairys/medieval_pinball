@@ -10,7 +10,7 @@ var _current_hit_count := 0
 var _is_destroyed = false
 
 func _disable_node():
-	process_mode = 4
+	process_mode = Node.PROCESS_MODE_DISABLED
 	hide()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -21,10 +21,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	var direction = (body.global_position - global_position).normalized()
 	body.apply_impulse(-direction*bounce_impulse)
 	
-	if _current_hit_count >= hit_count and not _is_destroyed: 
+	if _current_hit_count > hit_count and not _is_destroyed: 
 		_is_destroyed = true
 		GameManager.increase_score(break_score)
-		await get_tree().create_timer(destruction_delay).timeout
+		#await get_tree().create_timer(destruction_delay).timeout
 		call_deferred("_disable_node")
 		return
 	GameManager.increase_score(hit_score)

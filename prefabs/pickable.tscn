@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi268sefoy7i3"]
+
+[ext_resource type="Script" path="res://scripts/pickable.gd" id="1_to1q8"]
+[ext_resource type="Texture2D" uid="uid://dm8cyscnr4fu" path="res://sprites/king.png" id="2_vyj0s"]
+[ext_resource type="Texture2D" uid="uid://bn6ce2wratny" path="res://sprites/king_hit.png" id="3_lcy0u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d7wty"]
+radius = 36.0139
+
+[node name="Pickable" type="Area2D"]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_to1q8")
+default_texture = ExtResource("2_vyj0s")
+on_hit_texture = ExtResource("3_lcy0u")
+sprite_scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d7wty")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

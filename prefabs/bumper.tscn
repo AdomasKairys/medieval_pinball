@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/bumper.gd" id="1_sukxr"]
 [ext_resource type="Script" path="res://scripts/objective.gd" id="1_w7a66"]
-[ext_resource type="Texture2D" uid="uid://bqu44lb3vriaw" path="res://knight_hit.png" id="2_7x2n5"]
-[ext_resource type="Texture2D" uid="uid://dcek345d5fu3e" path="res://knight.png" id="3_8plvh"]
+[ext_resource type="Texture2D" uid="uid://bqu44lb3vriaw" path="res://sprites/knight_hit.png" id="2_7x2n5"]
+[ext_resource type="Texture2D" uid="uid://dcek345d5fu3e" path="res://sprites/knight.png" id="3_8plvh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ig2rm"]
 bounce = 1.0

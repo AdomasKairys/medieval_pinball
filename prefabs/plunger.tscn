@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bfc82o6vllghb"]
 
 [ext_resource type="Script" path="res://scripts/plunger.gd" id="1_5dgyp"]
-[ext_resource type="Texture2D" uid="uid://dli5hir2rqfp5" path="res://cannon.png" id="2_32csh"]
+[ext_resource type="Texture2D" uid="uid://dli5hir2rqfp5" path="res://sprites/cannon.png" id="2_32csh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5nsyb"]
 bounce = 1.0

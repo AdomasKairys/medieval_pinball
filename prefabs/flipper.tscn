@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://crs5qbt0h8ksl"]
 
 [ext_resource type="Script" path="res://scripts/flipper.gd" id="1_1hd07"]
-[ext_resource type="Texture2D" uid="uid://bbqhj7kd412k4" path="res://sword.png" id="2_26mo8"]
+[ext_resource type="Texture2D" uid="uid://bbqhj7kd412k4" path="res://sprites/sword.png" id="2_26mo8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fs3e6"]
 rough = true

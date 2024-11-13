@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dli5hir2rqfp5"
-path="res://.godot/imported/cannon.png-f77e13959ce355916ec84b043cdbbce5.ctex"
+uid="uid://bqu44lb3vriaw"
+path="res://.godot/imported/knight_hit.png-8a784c8dd20f8d306bdbea9f43532289.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cannon.png"
-dest_files=["res://.godot/imported/cannon.png-f77e13959ce355916ec84b043cdbbce5.ctex"]
+source_file="res://sprites/knight_hit.png"
+dest_files=["res://.godot/imported/knight_hit.png-8a784c8dd20f8d306bdbea9f43532289.ctex"]
 
 [params]
 

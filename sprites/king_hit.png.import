@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbqhj7kd412k4"
-path="res://.godot/imported/sword.png-0e1225f18a7a3b6141127a98a4fbe7e9.ctex"
+uid="uid://bn6ce2wratny"
+path="res://.godot/imported/king_hit.png-dbbf0766f2040229d8734f60ba0517ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sword.png"
-dest_files=["res://.godot/imported/sword.png-0e1225f18a7a3b6141127a98a4fbe7e9.ctex"]
+source_file="res://sprites/king_hit.png"
+dest_files=["res://.godot/imported/king_hit.png-dbbf0766f2040229d8734f60ba0517ac.ctex"]
 
 [params]
 
