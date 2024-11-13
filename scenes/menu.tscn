@@ -63,5 +63,24 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 50
 text = "EXIT"
 
+[node name="Controls" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -179.0
+offset_top = 44.0
+offset_right = 180.0
+offset_bottom = 137.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0.99, 0.891, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]Down arrow: launch ball
+Left and Right arrow: cotrol flippers
+Escape: quit the game"
+
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
