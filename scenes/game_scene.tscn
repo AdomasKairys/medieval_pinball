@@ -1,14 +1,15 @@
-[gd_scene load_steps=35 format=3 uid="uid://3d7hohme3sih"]
+[gd_scene load_steps=39 format=3 uid="uid://3d7hohme3sih"]
 
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_o1r26"]
 [ext_resource type="Texture2D" uid="uid://c8ciu2rc27x1j" path="res://background.png" id="2_60ke5"]
-[ext_resource type="PackedScene" uid="uid://bws3icemu6ns0" path="res://prefabs/obstacle.tscn" id="3_jl0bj"]
+[ext_resource type="PackedScene" uid="uid://bws3icemu6ns0" path="res://prefabs/bumper.tscn" id="3_jl0bj"]
 [ext_resource type="PackedScene" uid="uid://wpnb3kym3rjy" path="res://prefabs/score_zone.tscn" id="4_qkuew"]
 [ext_resource type="Script" path="res://scripts/middle_gutter.gd" id="5_u2341"]
+[ext_resource type="Script" path="res://scripts/breakable.gd" id="6_ke8kx"]
 [ext_resource type="Script" path="res://scripts/curve_wall.gd" id="6_oouna"]
 [ext_resource type="PackedScene" uid="uid://bruh0wf0sho33" path="res://prefabs/pinball.tscn" id="7_ll1oo"]
-[ext_resource type="PackedScene" uid="uid://crs5qbt0h8ksl" path="res://prefabs/paddle.tscn" id="8_j2dpv"]
-[ext_resource type="PackedScene" uid="uid://bfc82o6vllghb" path="res://prefabs/launcher.tscn" id="9_r37hq"]
+[ext_resource type="PackedScene" uid="uid://crs5qbt0h8ksl" path="res://prefabs/flipper.tscn" id="8_j2dpv"]
+[ext_resource type="PackedScene" uid="uid://bfc82o6vllghb" path="res://prefabs/plunger.tscn" id="9_r37hq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6imrx"]
 bounce = 1.0
@@ -37,6 +38,16 @@ height = 147.633
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2xlc"]
 size = Vector2(191, 20)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a5c66"]
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ux0j6"]
+size = Vector2(122, 20)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0l0eq"]
+radius = 6.99658
+height = 123.979
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lyc5j"]
 
@@ -121,17 +132,17 @@ texture = ExtResource("2_60ke5")
 
 [node name="Placeables" type="Node2D" parent="."]
 
-[node name="Obstacle3" parent="Placeables" instance=ExtResource("3_jl0bj")]
+[node name="Bumper" parent="Placeables" instance=ExtResource("3_jl0bj")]
 position = Vector2(322, 216)
 rotation = 2.96176
 scale = Vector2(0.5, 0.5)
 
-[node name="Obstacle2" parent="Placeables" instance=ExtResource("3_jl0bj")]
+[node name="Bumper2" parent="Placeables" instance=ExtResource("3_jl0bj")]
 position = Vector2(398, 133)
 rotation = -0.496558
 scale = Vector2(0.5, 0.5)
 
-[node name="Obstacle" parent="Placeables" instance=ExtResource("3_jl0bj")]
+[node name="Bumper3" parent="Placeables" instance=ExtResource("3_jl0bj")]
 position = Vector2(451, 233)
 rotation = 0.969256
 scale = Vector2(0.732023, 0.732023)
@@ -189,7 +200,7 @@ rotation = -0.829448
 shape = SubResource("CapsuleShape2D_c4dvw")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Placeables/BouncePads"]
-position = Vector2(401.799, 406.359)
+position = Vector2(397.793, 410.937)
 rotation = -0.685753
 shape = SubResource("CapsuleShape2D_xsh1h")
 
@@ -202,6 +213,25 @@ script = ExtResource("5_u2341")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Placeables/MiddleGutter"]
 position = Vector2(35.5, 0)
 shape = SubResource("RectangleShape2D_y2xlc")
+
+[node name="Breakable" type="StaticBody2D" parent="Placeables"]
+position = Vector2(305, 552)
+collision_layer = 8
+collision_mask = 4
+physics_material_override = SubResource("PhysicsMaterial_a5c66")
+script = ExtResource("6_ke8kx")
+
+[node name="Area2D" type="Area2D" parent="Placeables/Breakable"]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeables/Breakable/Area2D"]
+rotation = -0.0016962
+shape = SubResource("RectangleShape2D_ux0j6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeables/Breakable"]
+rotation = 1.56744
+shape = SubResource("CapsuleShape2D_0l0eq")
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -364,26 +394,24 @@ curve = SubResource("Curve2D_wv5cy")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Scoop/Bottom"]
 
 [node name="Pinball" parent="." instance=ExtResource("7_ll1oo")]
-position = Vector2(609, 808)
+position = Vector2(300, 508)
 continuous_cd = 1
 
-[node name="Paddles" type="Node2D" parent="."]
+[node name="Flippers" type="Node2D" parent="."]
 position = Vector2(299, 911)
 
-[node name="PaddleRight" parent="Paddles" instance=ExtResource("8_j2dpv")]
+[node name="FlipperRight" parent="Flippers" instance=ExtResource("8_j2dpv")]
 position = Vector2(128, -20)
 rotation = 2.44346
-paddle_rotation_speed = 30.0
 rotation_max = 200.0
 rotation_min = 140.0
 
-[node name="PaddleLeft" parent="Paddles" instance=ExtResource("8_j2dpv")]
+[node name="FlipperLeft" parent="Flippers" instance=ExtResource("8_j2dpv")]
 position = Vector2(-128, -20)
 is_left = true
-paddle_rotation_speed = 30.0
 rotation_max = 60.0
 
-[node name="Launcher" parent="." instance=ExtResource("9_r37hq")]
+[node name="Plunger" parent="." instance=ExtResource("9_r37hq")]
 position = Vector2(610, 899)
 
 [node name="Control" type="Control" parent="."]
@@ -409,3 +437,4 @@ offset_bottom = 132.0
 text = "High score: 0"
 
 [connection signal="body_entered" from="Placeables/MiddleGutter" to="Placeables/MiddleGutter" method="_on_body_entered"]
+[connection signal="body_entered" from="Placeables/Breakable/Area2D" to="Placeables/Breakable" method="_on_area_2d_body_entered"]

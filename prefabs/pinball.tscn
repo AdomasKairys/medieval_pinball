@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bruh0wf0sho33"]
 
-[ext_resource type="Texture2D" uid="uid://dxierx42mcg1d" path="res://cannon-ball.png" id="2_euse6"]
+[ext_resource type="Texture2D" uid="uid://dxierx42mcg1d" path="res://cannon_ball.png" id="2_euse6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qwg4n"]
 rough = true
@@ -15,7 +15,7 @@ collision_mask = 27
 physics_material_override = SubResource("PhysicsMaterial_qwg4n")
 can_sleep = false
 
-[node name="PinballSprite" type="Sprite2D" parent="."]
+[node name="CannonBall" type="Sprite2D" parent="."]
 scale = Vector2(1.54959, 1.54959)
 texture = ExtResource("2_euse6")
 

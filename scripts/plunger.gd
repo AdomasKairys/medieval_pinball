@@ -17,8 +17,8 @@ var _start_sprite_pos: Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_start_pos = position
-	_start_sprite_scale = $LauncherSprite.scale
-	_start_sprite_pos = $LauncherSprite.position
+	_start_sprite_scale = $PlungerSprite.scale
+	_start_sprite_pos = $PlungerSprite.position
 
 func _input(event: InputEvent) -> void:
 	if event.is_action("ui_down"):
@@ -34,7 +34,7 @@ func _input(event: InputEvent) -> void:
 				_start_pos+Vector2(0, prime_distance), 
 				1/prime_speed)
 			_tween.tween_property(
-				$LauncherSprite, 
+				$PlungerSprite, 
 				"scale",  
 				_start_sprite_scale - Vector2(0, squash_scale), 
 				1/prime_speed)
@@ -45,7 +45,7 @@ func _input(event: InputEvent) -> void:
 				_start_pos, 
 				1/launch_speed)
 			_tween.tween_property(
-				$LauncherSprite, 
+				$PlungerSprite, 
 				"scale",  
 				_start_sprite_scale, 
 				1/launch_speed)

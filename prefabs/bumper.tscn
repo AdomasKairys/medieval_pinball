@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bws3icemu6ns0"]
 
-[ext_resource type="Script" path="res://scripts/obstacle.gd" id="1_sukxr"]
+[ext_resource type="Script" path="res://scripts/bumper.gd" id="1_sukxr"]
 [ext_resource type="Script" path="res://scripts/objective.gd" id="1_w7a66"]
 [ext_resource type="Texture2D" uid="uid://bqu44lb3vriaw" path="res://knight_hit.png" id="2_7x2n5"]
 [ext_resource type="Texture2D" uid="uid://dcek345d5fu3e" path="res://knight.png" id="3_8plvh"]
@@ -14,7 +14,7 @@ radius = 69.1158
 [sub_resource type="CircleShape2D" id="CircleShape2D_caee4"]
 radius = 73.1095
 
-[node name="Obstacle" type="StaticBody2D"]
+[node name="Bumper" type="StaticBody2D"]
 collision_layer = 8
 collision_mask = 4
 physics_material_override = SubResource("PhysicsMaterial_ig2rm")

@@ -14,4 +14,7 @@ func _on_score_changed():
 
 func _on_game_over():
 	GameManager.reset_score()
+	call_deferred("_reload_scene")
+
+func _reload_scene():
 	get_tree().reload_current_scene()
